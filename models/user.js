@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes){
 			field : 'name',
 			unique : true
 		}
-		
+
 	};
 
 	var userConfig = {
@@ -30,7 +30,6 @@ module.exports = function(sequelize, DataTypes){
 		freezeTableName : true,
 		classMethods: {
 			associate : function(models) {
-
 			}
 		}
 	};
