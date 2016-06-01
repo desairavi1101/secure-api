@@ -13,9 +13,13 @@ module.exports = function(sequelize, DataTypes){
 		},
 		tokenString : {
 			type : DataTypes.STRING(500),
-			allowNull : true,
 			field : 'token_string',
 			primaryKey : true
+		},
+		expires : {
+			type : DataTypes.DATE,
+			field : 'expires',
+			allowNull : false
 		}
 
 	};

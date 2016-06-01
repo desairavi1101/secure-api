@@ -5,7 +5,7 @@ var controller = {
 		return models.User.findAll({})
 		.then(cb).catch(errcb);
 	},
-	
+
 	add : function(user,cb,errcb) {
 		var newStream = models.User.build(user);
 		return newStream.save()
@@ -19,6 +19,11 @@ var controller = {
 
 	delete : function(id,cb,errcb) {
 		return models.User.destroy({where: { username : id}})
+		.then(cb).catch(errcb);
+	},
+
+	authenticate : function(userData,cb,errcb) {
+		return models.User.findOne({where : { username: userData.username, password : userData.password}})
 		.then(cb).catch(errcb);
 	}
 

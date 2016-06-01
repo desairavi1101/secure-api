@@ -1,16 +1,10 @@
 var models = require('../models');
 
 var controller = {
-	
-	authenticate : function(userData,cb,errcb) {
-		models.User.findOne({where : { username: userData.username, password : userData.password}})
-		.then(cb).catch(errcb);
-		
-	},
-	
+
 	add : function(token,cb,errcb) {
-		var newStream = models.Token.build(token);
-		return newStream.save()
+		var newToken = models.Token.build(token);
+		return newToken.save()
 		.then(cb).catch(errcb);
 	}
 
